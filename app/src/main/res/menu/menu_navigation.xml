@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/newQuotationFragment"
+        android:icon="@drawable/baseline_format_quote_24"
+        android:title="@string/quotations" />
+
+    <item
+        android:id="@+id/favouritesFragment"
+        android:icon="@drawable/baseline_auto_awesome_24"
+        android:title="@string/favourites" />
+
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/baseline_aod_24"
+        android:title="@string/settings" />
+</menu>

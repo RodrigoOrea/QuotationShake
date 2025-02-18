@@ -1,0 +1,39 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- TextView para la información del desarrollador -->
+
+        <!-- ImageView para la imagen del desarrollador -->
+
+        <TextView
+            android:id="@+id/tvAboutInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="92dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/aboutInformation"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/ivDeveloperImage"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivDeveloperImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:contentDescription="@string/developer_image"
+            android:src="@drawable/baseline_arrow_drop_down_24"
+            tools:layout_editor_absoluteX="82dp"
+            tools:layout_editor_absoluteY="293dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
