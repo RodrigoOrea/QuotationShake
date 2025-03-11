@@ -1,5 +1,6 @@
 package ui
 
+import android.content.res.Configuration
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -18,7 +19,10 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import dadm.roreizq.QuotationShake.R
 import dadm.roreizq.QuotationShake.databinding.ActivityMainBinding
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.navigation.NavigationBarView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity(), MenuProvider {
 
     private lateinit var binding: ActivityMainBinding
@@ -31,10 +35,11 @@ class MainActivity : AppCompatActivity(), MenuProvider {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
-
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
         navController = navHostFragment.navController
+
+        setSupportActionBar(binding.toolbar)
+        setupActionBarWithNavController(navController)
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.newQuotationFragment,
@@ -45,29 +50,42 @@ class MainActivity : AppCompatActivity(), MenuProvider {
 
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-
         addMenuProvider(this, this, Lifecycle.State.RESUMED)
 
-
-        val navigationBarView = binding.root.findViewById<com.google.android.material.navigation.NavigationBarView>(R.id.bottomNavigationView)
+        val navigationBarView = binding.root.findViewById<NavigationBarView>(R.id.bottomNavigationView)
         navigationBarView.setupWithNavController(navController)
 
-        //no comprehend :(
-        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { view, insets ->
-            val bars = insets.getInsets(WindowInsetsCompat.Type.displayCutout() or
-                    WindowInsetsCompat.Type.systemBars())
-            view.updatePadding(
-                left = bars.left,
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars() or WindowInsetsCompat.Type.displayCutout())
+
+            // Aplicar insets al BottomNavigationView
+            binding.bottomNavigationView.updatePadding(
+                left = systemBars.left,
                 top = 0,
                 right = 0,
-                bottom = bars.bottom
+                bottom = systemBars.bottom
             )
+
+            // Aplicar insets al FragmentContainerView
+            binding.navHostFragment.updatePadding(
+                left = 0,
+                top = 0,
+                right = systemBars.right,
+                bottom = if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) systemBars.bottom else 0
+            )
+
+            // Aplicar insets al AppBarLayout
+            binding.appbar.updatePadding(
+                top = systemBars.top,
+                left = systemBars.left,
+                right = 0,
+                bottom = 0
+            )
+
             WindowInsetsCompat.CONSUMED
-
-
         }
-
     }
+
     override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
         // Inflar el menú
         menuInflater.inflate(R.menu.menu_about, menu)

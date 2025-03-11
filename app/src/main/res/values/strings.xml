@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">QuotationShake</string>
+    <string name="app_name" translatable="false">QuotationShake</string>
     <string name="get_new_quotation">Get a new quotation</string>
     <string name="favourite_quotations">Favourite quotations</string>
     <string name="settings">Settings</string>
@@ -7,6 +7,21 @@
     <string name="quotations">Quotations</string>
     <string name="favourites">Favourites</string>
     <string name="aboutInfo">QuotationShake by \n\nRodrigo Orea\n\nroreizq@upv.edu.es\n\nDeveloped for DADM 2024</string>
-    <string name="aboutInformation">QuotationShake by\n\nRodrigo Orea\n\nroreizq@upv.edu.es\n\nDeveloped for DADM 2024</string>
     <string name="developer_image">Developer Image</string>
+    <string name="greetings">Hello %1s!,  Refresh to get a new quotation  (swipe down or options menu)</string>
+    <string name="anonymous">Anonymous</string>
+    <string name="refresh">Refresh</string>
+    <string name="network_error">Network error. Check your internet connection</string>
+    <string name="server_error">Server error. Try again later</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="no_internet_error">No internet connection</string>
+    <!-- res/values/strings.xml -->
+        <!-- Preferencias -->
+    <string name="user_name_title">User name</string>
+    <string name="user_name_hint">Insert your name</string>
+    <string name="language_title">Languaje</string>
+
+        <!-- Idiomas -->
+    <string name="english">English</string>
+    <string name="russian">Russian</string>
 </resources>

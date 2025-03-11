@@ -14,7 +14,11 @@
         android:id="@+id/favouritesFragment"
         android:name="ui.favourites.FavouritesFragment"
         android:label="Favourites"
-        tools:layout="@layout/fragment_favourites" />
+        tools:layout="@layout/fragment_favourites" >
+        <action
+            android:id="@+id/action_to_deleteAllDialog"
+            app:destination="@id/deleteAllDialogFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/settingsFragment"
@@ -27,4 +31,10 @@
         android:name="ui.about.AboutDialogFragment"
         android:label="About"
         tools:layout="@layout/fragment_about" />
+
+    <dialog
+        android:id="@+id/deleteAllDialogFragment"
+        android:name="ui.favourites.DeleteAllDialogFragment"
+        android:label="Delete All Dialog" />
+
 </navigation>

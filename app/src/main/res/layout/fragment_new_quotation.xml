@@ -19,52 +19,59 @@
 
             <!-- Mensaje de bienvenida centrado en la pantalla -->
             <TextView
-                android:id="@+id/tvGreeting"
+                android:id="@+id/tvGreetings"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="TEXTO DE EJEMPLO"
+                android:text=""
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
 
-            <!-- Texto de la cita, con justificación -->
+            <!-- Texto de la cita, con justificación y márgenes -->
             <TextView
                 android:id="@+id/tvQuotationText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:justificationMode="inter_word"
-                android:text="TEXTO DE EJEMPLO"
-                app:layout_constraintTop_toTopOf="parent"
+                android:text=""
+                android:textAlignment="center"
                 app:layout_constraintBottom_toTopOf="@+id/tvQuotationAuthor"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="packed" />
 
-            <!-- Autor de la cita, en cursiva -->
+            <!-- Autor de la cita, en cursiva y con márgenes -->
             <TextView
                 android:id="@+id/tvQuotationAuthor"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:text=""
+                android:textAlignment="viewEnd"
                 android:textStyle="italic"
-                app:layout_constraintTop_toBottomOf="@+id/tvQuotationText"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/tvQuotationText" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <!-- Botón flotante, en la esquina inferior derecha -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fabAddFavourite"
+            android:id="@+id/fabAddToFavourites"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_margin="16dp"
+            android:visibility="gone"
             android:contentDescription="@string/favourites"
-            android:src="@drawable/baseline_arrow_drop_down_24"/>
+            android:src="@drawable/baseline_library_add_24"/>
 
     </FrameLayout>
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

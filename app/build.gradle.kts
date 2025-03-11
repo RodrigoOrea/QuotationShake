@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.ksp)  // Usando la versión definida en libs.versions.toml
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -50,7 +52,27 @@ dependencies {
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.swiperefreshlayout)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.play.services.basement)
+    implementation(libs.androidx.room.common)
+    implementation(libs.room.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.android.compiler)
+
+    implementation(libs.moshi.kotlin)
+    ksp(libs.moshi.kotlin.codegen)
+
+    implementation(libs.retrofit)
+    implementation(libs.converter.moshi)
+    implementation(libs.androidx.preference.ktx)
+
+    implementation(libs.datastore.preferences)
+
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+    ksp(libs.room.compiler) // ✅ Añadir compilador de Room para KSP
+
+
 }

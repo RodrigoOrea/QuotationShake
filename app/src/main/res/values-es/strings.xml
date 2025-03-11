@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="get_new_quotation">Obten una nueva cita</string>
+    <string name="favourite_quotations">Citas favoritas</string>
+    <string name="settings">Ajustes</string>
+    <string name="about">Acerca de</string>
+    <string name="quotations">Citas</string>
+    <string name="favourites">Favoritos</string>
+    <string name="aboutInfo">QuotationShake de \n\nRodrigo Orea\n\nroreizq@upv.edu.es\n\nDesarrollado para DADM 2024</string>
+    <string name="developer_image">Imagen de desarrollador</string>
+    <string name="greetings">Hola %1s!, Refresca para obtener una nueva cita (desliza hacia abajo o menu de opciones)</string>
+    <string name="anonymous">Anonimo</string>
+    <string name="refresh">Refrescar</string>
+    <string name="network_error">Error de red. Verifica tu conexión.</string>
+    <string name="server_error">Error del servidor. Intenta de nuevo.</string>
+    <string name="unknown_error">Error desconocido</string>
+    <string name="no_internet_error">No hay conexión a Internet</string>
+    <string name="user_name_title">Nombre de usuario</string>
+    <string name="user_name_hint">Introduce tu nombre</string>
+    <string name="language_title">Idioma</string>
+    <string name="english">Inglés</string>
+    <string name="russian">Ruso</string>
+</resources>
